@@ -15,7 +15,6 @@ import Image from "next/image";
 
 // ─── DATA ───────────────────────────────────────────────────────────
 const navLinks = [
-  { href: "/",                        label: "Home" },
   { href: "/about",                   label: "About Us" },
   { href: "/services",                label: "Services" },
   { href: "/gulf-visas",              label: "Gulf Work Visas" },
@@ -86,50 +85,6 @@ export default function Navbar() {
             : "shadow-[0_1px_0_rgba(15,23,42,0.06)]"
         }`}
       >
-
-        {/* ── TOP BAR ── */}
-        <div className="bg-[#f1efe8] border-b border-slate-200">
-          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-2 lg:px-10">
-            {/* Phones */}
-            <div className="flex items-center gap-4 flex-wrap">
-              <a
-                href="tel:+919953889465"
-                className="flex items-center gap-1.5 text-xs text-slate-500 transition duration-200 hover:text-[#01696f]"
-              >
-                <FaPhone className="text-[10px] text-[#01696f]" />
-                +91 9953889465
-              </a>
-              <span className="hidden h-3 w-px bg-slate-300 sm:block" />
-              <a
-                href="tel:+919891542452"
-                className="hidden items-center gap-1.5 text-xs text-slate-500 transition duration-200 hover:text-[#01696f] sm:flex"
-              >
-                <FaPhone className="text-[10px] text-[#01696f]" />
-                +91 98915 42452
-              </a>
-            </div>
-
-            {/* Email + WhatsApp pill */}
-            <div className="flex items-center gap-3">
-              <a
-                href="mailto:ashhar.info1@gmail.com"
-                className="hidden items-center gap-1.5 text-xs text-slate-500 transition duration-200 hover:text-[#01696f] sm:flex"
-              >
-                <FaEnvelope className="text-[10px] text-[#01696f]" />
-                ashhar.info1@gmail.com
-              </a>
-              <a
-                href="https://wa.me/919953889465"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 rounded-full bg-[#25D366]/12 px-3 py-1 text-[11px] font-semibold text-[#1a9e4d] transition duration-200 hover:bg-[#25D366]/20"
-              >
-                <FaWhatsapp className="text-xs" />
-                WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
 
         {/* ── MAIN NAV ── */}
         <nav className="bg-white border-b border-slate-100">
