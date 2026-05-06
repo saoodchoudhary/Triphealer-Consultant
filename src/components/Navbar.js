@@ -145,7 +145,7 @@ export default function Navbar() {
                 <div className="text-[17px] font-extrabold tracking-tight text-slate-900">
                   Triphealer
                 </div>
-                <div className="mt-1 hidden text-[10px] font-semibold uppercase tracking-[0.14em] text-[#01696f] sm:block">
+                <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.05] sm:tracking-[0.14em] text-[#01696f] block">
                   Medical Tourism & Manpower
                 </div>
               </div>

@@ -1,37 +1,88 @@
 @import "tailwindcss";
 
 :root {
+  /* Brand colors */
   --background: #ffffff;
   --foreground: #1e293b;
-  --primary: #0c4a6e;
-  --primary-dark: #082f49;
-  --primary-light: #0369a1;
-  --secondary: #065f46;
+  --primary:       #01696f;
+  --primary-dark:  #0c4e54;
+  --primary-light: #4f98a3;
+  --secondary:     #065f46;
   --secondary-light: #059669;
-  --accent: #b45309;
-  --accent-light: #d97706;
+  --accent:        #b45309;
+  --accent-light:  #d97706;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-dark: var(--primary-dark);
-  --color-primary-light: var(--primary-light);
-  --color-secondary: var(--secondary);
+  --color-background:      var(--background);
+  --color-foreground:      var(--foreground);
+  --color-primary:         var(--primary);
+  --color-primary-dark:    var(--primary-dark);
+  --color-primary-light:   var(--primary-light);
+  --color-secondary:       var(--secondary);
   --color-secondary-light: var(--secondary-light);
-  --color-accent: var(--accent);
-  --color-accent-light: var(--accent-light);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent:          var(--accent);
+  --color-accent-light:    var(--accent-light);
+
+  /* Font variables → Tailwind utility classes */
+  --font-display: var(--font-display);
+  --font-body:    var(--font-body);
+}
+
+/* ── Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  hanging-punctuation: first last;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Headings always use display font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), 'Helvetica Neue', Arial, sans-serif;
+  text-wrap: balance;
+  line-height: 1.15;
+}
+
+p, li, figcaption {
+  text-wrap: pretty;
+  max-width: 72ch;
+}
+
+
+
+
+button { cursor: pointer; }
+
+::selection {
+  background: color-mix(in oklch, var(--primary) 20%, transparent);
+  color: var(--foreground);
+}
+
+:focus-visible {
+  outline: 1px solid var(--primary);
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
