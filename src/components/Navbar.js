@@ -176,7 +176,7 @@ export default function Navbar() {
                 Triphealer
               </div>
               <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#01696f]">
-                Medical Tourism & Manpower
+                Medical Tourism & Manpower Consultant
               </div>
             </div>
           </div>
