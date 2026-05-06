@@ -15,7 +15,8 @@ import {
 // ─── DATA ───────────────────────────────────────────────────────────
 const navLinks = [
   { href: "/",                        label: "Home" },
-  { href: "/recruitment-services",    label: "Recruitment" },
+  { href: "/about",                   label: "About Us" },
+  { href: "/services",                label: "Services" },
   { href: "/gulf-visas",              label: "Gulf Work Visas" },
   { href: "/medical-treatment-india", label: "Medical Treatment" },
   { href: "/travel-support",          label: "Travel Support" },
