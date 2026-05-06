@@ -61,52 +61,6 @@ const contactList = [
   { href: "mailto:ashhar.info1@gmail.com", Icon: FaEnvelope, text: "ashhar.info1@gmail.com" },
 ];
 
-// ─── LOGO SVG ───────────────────────────────────────────────────────
-// Concept: Plane + Heart pulse line merged — travel (Gulf) + medical (India)
-// Geometric, works at 24px and 200px, teal brand color
-function TriphealerLogo({ size = 42 }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 48 48"
-      fill="none"
-      aria-label="Triphealer"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      {/* Background rounded square */}
-      <rect width="48" height="48" rx="12" fill="#01696f" />
-
-      {/* Heartbeat / pulse line — left flat, spike up, spike down, right flat */}
-      {/* Represents medical + vitality */}
-      <polyline
-        points="6,26 14,26 17,18 20,34 23,22 26,26 42,26"
-        stroke="white"
-        strokeWidth="2.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
-      />
-
-      {/* Small plane silhouette top-right — represents Gulf travel */}
-      {/* Body */}
-      <ellipse cx="37" cy="13" rx="5" ry="2.2" rx2="5" transform="rotate(-35 37 13)"
-        fill="none"
-      />
-      {/* Use path instead for plane */}
-      <path
-        d="M32 16 L38 10 L41 11 L36 17 Z"
-        fill="white"
-        opacity="0.9"
-      />
-      <path
-        d="M35 17 L38 15 L40 16 L37 19 Z"
-        fill="white"
-        opacity="0.6"
-      />
-    </svg>
-  );
-}
 
 // ─── FOOTER ─────────────────────────────────────────────────────────
 export default function Footer() {
@@ -150,32 +104,8 @@ export default function Footer() {
             {/* Logo lockup */}
             <div className="mb-5 flex items-center gap-3">
               {/* New logo: T letterform + pulse line */}
-              <svg
-                width="44"
-                height="44"
-                viewBox="0 0 48 48"
-                fill="none"
-                aria-label="Triphealer logo"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {/* Rounded square bg */}
-                <rect width="48" height="48" rx="11" fill="#01696f" />
-
-                {/* Stylised T — top bar + stem, slightly geometric */}
-                <rect x="10" y="11" width="28" height="5" rx="2.5" fill="white" />
-                <rect x="20.5" y="11" width="7" height="20" rx="2.5" fill="white" />
-
-                {/* Small heartbeat pulse below — sits on baseline of the T stem */}
-                <polyline
-                  points="10,36 15,36 17.5,31 20,39 22.5,33 25,36 38,36"
-                  stroke="white"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeOpacity="0.75"
-                  fill="none"
-                />
-              </svg>
+              
+            <img src="/logo/triphealer-logo.webp" alt="Triphealer Logo" className="h-12 w-auto" />
 
               <div>
                 <div className="text-lg font-extrabold tracking-tight text-white leading-none">

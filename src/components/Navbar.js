@@ -11,6 +11,7 @@ import {
   FaWhatsapp,
   FaArrowRight,
 } from "react-icons/fa";
+import Image from "next/image";
 
 // ─── DATA ───────────────────────────────────────────────────────────
 const navLinks = [
@@ -53,32 +54,7 @@ const sidebarServices = [
   },
 ];
 
-// ─── LOGO SVG ────────────────────────────────────────────────────────
-function Logo({ size = 40 }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 48 48"
-      fill="none"
-      aria-label="Triphealer"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect width="48" height="48" rx="11" fill="#01696f" />
-      <rect x="10" y="11" width="28" height="5" rx="2.5" fill="white" />
-      <rect x="20.5" y="11" width="7" height="20" rx="2.5" fill="white" />
-      <polyline
-        points="9,36 15,36 17.5,31 20,39 22.5,33 25,36 39,36"
-        stroke="white"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeOpacity="0.75"
-        fill="none"
-      />
-    </svg>
-  );
-}
+
 
 // ─── NAVBAR ─────────────────────────────────────────────────────────
 export default function Navbar() {
@@ -164,7 +140,7 @@ export default function Navbar() {
               href="/"
               className="flex items-center gap-3 transition duration-200 hover:opacity-85"
             >
-              <Logo size={42} />
+              <img src="/logo/logo-transparent.webp" alt="Triphealer Logo" className="h-12 w-auto" />
               <div className="leading-none">
                 <div className="text-[17px] font-extrabold tracking-tight text-slate-900">
                   Triphealer
@@ -239,7 +215,7 @@ export default function Navbar() {
         {/* Sidebar header */}
         <div className="flex items-center justify-between border-b border-slate-100 bg-[#f7f6f2] px-5 py-4">
           <div className="flex items-center gap-3">
-            <Logo size={36} />
+            <img src="/logo/logo-transparent.webp" alt="Triphealer Logo" className="h-12 w-auto" />
             <div>
               <div className="text-sm font-extrabold tracking-tight text-slate-900">
                 Triphealer
