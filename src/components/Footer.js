@@ -11,6 +11,8 @@ import {
 // ─── DATA ───────────────────────────────────────────────────────────
 const quickLinks = [
   { href: "/",                        label: "Home" },
+  { href: "/about",                   label: "About Us" },
+  { href: "/services",                label: "All Services" },
   { href: "/recruitment-services",    label: "Recruitment Services" },
   { href: "/gulf-visas",              label: "Gulf Work Visas" },
   { href: "/medical-treatment-india", label: "Medical Treatment in India" },
