@@ -5,7 +5,7 @@ const nextConfig = {
     remotePatterns: [
       { protocol: "https", hostname: "pplx-res.cloudinary.com" },
       { protocol: "https", hostname: "picsum.photos" },
-      { protocol: "https", hostname: "github.com" },
+      { protocol: "https", hostname: "github.com", pathname: "/user-attachments/assets/**" },
     ],
   },
 };
