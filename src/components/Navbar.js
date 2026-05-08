@@ -12,6 +12,7 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import Image from "next/image";
+import LanguageTranslator from "./LanguageTranslator";
 
 // ─── DATA ───────────────────────────────────────────────────────────
 const navLinks = [
@@ -124,8 +125,11 @@ export default function Navbar() {
               })}
             </div>
 
+
+
             {/* CTA + hamburger */}
             <div className="flex items-center gap-3">
+          <LanguageTranslator />
               <Link
                 href="/contact"
                 className="hidden rounded-lg bg-[#01696f] px-4 py-2 text-sm font-bold text-white transition duration-200 hover:bg-[#0c4e54] hover:-translate-y-0.5 lg:inline-flex items-center gap-1.5"
@@ -135,13 +139,14 @@ export default function Navbar() {
 
               <button
                 onClick={() => setSidebarOpen(true)}
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-slate-600 transition duration-200 hover:bg-slate-100 hover:text-slate-900 lg:hidden"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border-slate-200 bg-slate-50 text-slate-600 transition duration-200 hover:bg-slate-100 hover:text-slate-900 lg:hidden"
                 aria-label="Open menu"
               >
                 <FaBars className="text-base" />
               </button>
             </div>
           </div>
+          
         </nav>
       </header>
 

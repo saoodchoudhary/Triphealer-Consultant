@@ -27,56 +27,64 @@ const treatments = [
   {
     Icon: FaHeartbeat,
     color: "text-red-500",
-    ring: "bg-red-50 ring-red-100",
+    accentBg: "bg-red-500",
+    image: "https://picsum.photos/seed/heart-treatment-india/600/400",
     title: "Heart Treatment",
     desc: "Cardiac surgery, bypass, angioplasty and heart valve replacement at India's top cardiac centers.",
   },
   {
     Icon: GiKidneys,
     color: "text-amber-600",
-    ring: "bg-amber-50 ring-amber-100",
+    accentBg: "bg-amber-500",
+    image: "https://picsum.photos/seed/kidney-treatment-india/600/400",
     title: "Kidney Treatment",
     desc: "Kidney transplant, dialysis management and nephrology consultations at expert centers.",
   },
   {
     Icon: GiBrain,
     color: "text-violet-600",
-    ring: "bg-violet-50 ring-violet-100",
+    accentBg: "bg-violet-600",
+    image: "https://picsum.photos/seed/cancer-oncology-india/600/400",
     title: "Cancer Consultation",
     desc: "Oncology treatment including chemotherapy, radiation therapy and surgical oncology.",
   },
   {
     Icon: FaUserMd,
     color: "text-sky-600",
-    ring: "bg-sky-50 ring-sky-100",
+    accentBg: "bg-sky-500",
+    image: "https://picsum.photos/seed/orthopedic-surgery-india/600/400",
     title: "Orthopedic Treatment",
     desc: "Joint replacement, spine surgery, sports injuries and orthopedic rehabilitation.",
   },
   {
     Icon: FaFlask,
     color: "text-pink-600",
-    ring: "bg-pink-50 ring-pink-100",
+    accentBg: "bg-pink-500",
+    image: "https://picsum.photos/seed/ivf-fertility-clinic/600/400",
     title: "IVF / Fertility Support",
     desc: "In vitro fertilization, fertility evaluations and reproductive health treatments.",
   },
   {
     Icon: FaHospital,
     color: "text-emerald-600",
-    ring: "bg-emerald-50 ring-emerald-100",
+    accentBg: "bg-emerald-600",
+    image: "https://picsum.photos/seed/general-surgery-hospital/600/400",
     title: "General Surgery",
     desc: "Appendectomy, hernia repair, gallbladder removal and other common surgical procedures.",
   },
   {
     Icon: FaAmbulance,
     color: "text-orange-600",
-    ring: "bg-orange-50 ring-orange-100",
+    accentBg: "bg-orange-500",
+    image: "https://picsum.photos/seed/dental-clinic-india/600/400",
     title: "Dental Treatment",
     desc: "Dental implants, root canal, teeth whitening and complete oral care solutions.",
   },
   {
     Icon: MdHealthAndSafety,
     color: "text-teal-600",
-    ring: "bg-teal-50 ring-teal-100",
+    accentBg: "bg-teal-600",
+    image: "https://picsum.photos/seed/eye-care-ophthalmology/600/400",
     title: "Eye Treatment",
     desc: "Cataract surgery, LASIK, glaucoma treatment and other ophthalmology services.",
   },
@@ -130,79 +138,79 @@ const topHospitals = [
     name: "AIIMS (All India Institute of Medical Sciences)",
     city: "New Delhi",
     address: "Sri Aurobindo Marg, Ansari Nagar, New Delhi 110029",
-    image: "https://picsum.photos/seed/aiims-hospital/900/600",
+    image: "/images/hospitals/aiims-delhi-hospital.webp",
   },
   {
     name: "Apollo Hospitals",
     city: "New Delhi",
     address: "Mathura Road, Sarita Vihar, New Delhi 110076",
-    image: "https://picsum.photos/seed/apollo-hospital/900/600",
+    image: "/images/hospitals/apollo-hospital.webp",
   },
   {
     name: "Fortis Healthcare",
     city: "Gurugram",
     address: "Sector 44, Opposite HUDA City Centre, Gurugram 122002",
-    image: "https://picsum.photos/seed/fortis-hospital/900/600",
+    image: "/images/hospitals/fortis-hospital.webp",
   },
   {
     name: "Max Healthcare",
     city: "New Delhi",
     address: "1-2, Press Enclave Road, Saket, New Delhi 110017",
-    image: "https://picsum.photos/seed/max-hospital/900/600",
+    image: "/images/hospitals/max-healthcare-hospital.webp",
   },
   {
     name: "Medanta – The Medicity",
     city: "Gurugram",
     address: "Sector 38, Gurugram, Haryana 122001",
-    image: "https://picsum.photos/seed/medanta-hospital/900/600",
+    image: "/images/hospitals/medanta-hospital.webp",
   },
   {
     name: "Narayana Health",
     city: "Bengaluru",
     address: "258/A, Bommasandra Industrial Area, Bengaluru 560099",
-    image: "https://picsum.photos/seed/narayana-hospital/900/600",
+    image: "/images/hospitals/narayana-health-hospital.webp",
   },
   {
     name: "Manipal Hospitals",
     city: "Bengaluru",
     address: "98, HAL Airport Road, Bengaluru 560017",
-    image: "https://picsum.photos/seed/manipal-hospital/900/600",
+    image: "/images/hospitals/manipal-hospital.webp",
   },
   {
     name: "Kokilaben Dhirubhai Ambani Hospital",
     city: "Mumbai",
     address: "Rao Saheb Achutrao Patwardhan Marg, Andheri West, Mumbai 400053",
-    image: "https://picsum.photos/seed/kokilaben-hospital/900/600",
+    image: "/images/hospitals/kokilaben-hospital.webp",
   },
 ];
 
 const topDoctors = [
-  {
-    name: "Dr. Sowjanya Aggarwal",
-    credentials: "MBBS, MS - Obstetrics & Gynaecology",
-    specialization: "Obstetrics & Gynaecology",
-    experience: "12 Years",
-    hospital: "Apollo Hospitals, New Delhi",
-    location: "New Delhi, India",
-    image: "https://picsum.photos/seed/sowjanya-doctor/700/800",
-  },
-  {
-    name: "Dr. Rekha Mittal",
-    credentials: "MBBS, MD - Pediatrics",
-    specialization: "Pediatrics & Neonatology",
-    experience: "15 Years",
-    hospital: "Fortis Escorts Heart Institute, New Delhi",
-    location: "New Delhi, India",
-    image: "https://picsum.photos/seed/rekha-doctor/700/800",
-  },
   {
     name: "Dr. Gautam Niloba Naik",
     credentials: "MBBS, MD - General Medicine, DM - Cardiology",
     specialization: "Interventional Cardiologist",
     experience: "15 Years",
     hospital: "Indraprastha Apollo Hospital, New Delhi",
-    location: "New Delhi, India",
+    location: "New Delhi, Delhi",
     image: "https://github.com/user-attachments/assets/703eebd4-4718-45b9-953c-d7f0122e06ea",
+  },
+  {
+    name: "Dr. Anshul Gupta",
+    credentials: "MBBS, MD - General Medicine, DM - Oncology",
+    specialization: "Medical Oncology",
+    experience: "15 Years",
+    hospital: "Indraprastha Apollo Hospital, New Delhi",
+    location: "Akividu, Delhi",
+    image: "https://picsum.photos/seed/anshul-gupta-oncology/400/400",
+  },
+  {
+    name: "Dr. Rekha Mittal",
+    credentials: "MBBS, MD - Pediatrics, MBBS",
+    specialization: "Neurologist / Pediatric Neurologist",
+    experience: "29 Years",
+    hospital: "Madhukar Rainbow Children Hospital, Malviya Nagar, New Delhi",
+    location: "Akividu, Delhi",
+    image: "https://picsum.photos/seed/rekha-mittal-pediatrics/400/400",
   },
 ];
 
@@ -212,25 +220,16 @@ const buildDoctorWhatsappLink = (doctor) =>
     `Hello Sir, I want to consult with ${doctor.name} (${doctor.credentials}).`
   )}`;
 
-const whyIndia = [
-  "World-class hospitals with latest technology",
-  "Cost 60–80% lower than Gulf & Western countries",
-  "Highly qualified English-speaking doctors",
-  "Shorter waiting times for procedures",
-  "No language barrier with our interpreter support",
-  "Warm and personalized patient care",
-];
-
 const heroTags = [
-  { icon: FaStar,          label: "Top Hospitals",         color: "text-amber-400" },
-  { icon: MdTranslate,     label: "Arabic Interpreter",    color: "text-emerald-300" },
-  { icon: FaCheckCircle,   label: "End-to-End Assistance", color: "text-emerald-300" },
+  { icon: FaStar,        label: "Top Hospitals",         color: "text-amber-400" },
+  { icon: MdTranslate,   label: "Arabic Interpreter",    color: "text-emerald-300" },
+  { icon: FaCheckCircle, label: "End-to-End Assistance", color: "text-emerald-300" },
 ];
 
 // ─── PAGE ───────────────────────────────────────────────────────────
 export default function MedicalTreatmentPage() {
   return (
-    <main className=" bg-[#f7f6f2] text-slate-900">
+    <main className="bg-[#f7f6f2] text-slate-900">
 
       {/* ── HERO ── */}
       <section className="relative overflow-hidden bg-[#052e1c] text-white">
@@ -245,9 +244,8 @@ export default function MedicalTreatmentPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#052e1c]/70 via-transparent to-transparent" />
 
         <div className="relative mx-auto max-w-7xl px-4 py-8 lg:px-10 lg:py-20">
-          {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-emerald-300/80 text-sm mb-8">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+          <nav className="mb-8 flex items-center gap-2 text-sm text-emerald-300/80">
+            <Link href="/" className="transition-colors hover:text-white">Home</Link>
             <span className="text-white/30">/</span>
             <span className="text-emerald-200">Medical Treatment in India</span>
           </nav>
@@ -265,11 +263,10 @@ export default function MedicalTreatmentPage() {
             </h1>
 
             <p className="mt-6 max-w-xl text-base leading-8 text-slate-200 sm:text-lg">
-              Quality and affordable treatment in India with complete support — from hospital
-              booking to travel, accommodation and personalized patient care.
+              Quality treatment in India with complete support — from hospital booking to travel,
+              accommodation and personalized patient care.
             </p>
 
-            {/* Feature pills */}
             <div className="mt-8 flex flex-wrap gap-3">
               {heroTags.map(({ icon: Icon, label, color }) => (
                 <div
@@ -303,8 +300,8 @@ export default function MedicalTreatmentPage() {
       </section>
 
       {/* ── TRUST STRIP ── */}
-      <section className="bg-[#03180e] border-y border-white/5">
-        <div className="mx-auto max-w-7xl px-4 py-4 lg:px-10 text-center">
+      <section className="border-y border-white/5 bg-[#03180e]">
+        <div className="mx-auto max-w-7xl px-4 py-4 text-center lg:px-10">
           <p className="text-sm font-semibold text-emerald-200">
             🇮🇳 We bridge the gap between Gulf patients and world-class Indian healthcare
           </p>
@@ -333,15 +330,37 @@ export default function MedicalTreatmentPage() {
               return (
                 <div
                   key={t.title}
-                  className="group rounded-3xl border border-slate-200 bg-white p-7 shadow-[0_8px_24px_rgba(15,23,42,0.05)] hover:shadow-[0_16px_40px_rgba(15,23,42,0.09)] hover:-translate-y-1 transition-all duration-300"
+                  className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(15,23,42,0.10)]"
                 >
-                  <div className={`mb-5 flex h-13 w-13 items-center justify-center rounded-2xl ring-4 ${t.ring}`}>
-                    <TIcon className={`text-2xl ${t.color}`} />
+                  {/* Treatment image */}
+                  <div className="relative h-40 overflow-hidden">
+                    <Image
+                      src={t.image}
+                      alt={t.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover transition duration-500 group-hover:scale-105"
+                    />
+                    {/* Dark gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+
+                    {/* Icon badge — bottom-left over image */}
+                    <div className="absolute bottom-3 left-3 flex items-center gap-2">
+                      <span
+                        className={`flex h-8 w-8 items-center justify-center rounded-xl ${t.accentBg} shadow-lg`}
+                      >
+                        <TIcon className="text-sm text-white" />
+                      </span>
+                    </div>
                   </div>
-                  <h3 className="text-base font-bold text-slate-900 mb-2 group-hover:text-[#01696f] transition">
-                    {t.title}
-                  </h3>
-                  <p className="text-sm leading-7 text-slate-500">{t.desc}</p>
+
+                  {/* Card content */}
+                  <div className="p-5">
+                    <h3 className={`text-base font-bold text-slate-900 transition duration-200 group-hover:${t.color}`}>
+                      {t.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-7 text-slate-500">{t.desc}</p>
+                  </div>
                 </div>
               );
             })}
@@ -349,7 +368,7 @@ export default function MedicalTreatmentPage() {
         </div>
       </section>
 
-      {/* ── SUPPORT SERVICES ── dark section for contrast ── */}
+      {/* ── SUPPORT SERVICES ── */}
       <section className="bg-[#052e1c] px-4 py-20 text-white lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 max-w-2xl">
@@ -370,19 +389,19 @@ export default function MedicalTreatmentPage() {
               return (
                 <div
                   key={s.title}
-                  className="rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm hover:bg-white/10 transition"
+                  className="rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm transition hover:bg-white/10"
                 >
                   <div className="mb-5 flex items-center gap-3">
                     <span className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500/20 text-sm font-extrabold text-emerald-300 ring-1 ring-emerald-500/30">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                   </div>
-                  <SIcon className="text-2xl text-emerald-400 mb-4" />
-                  <h3 className="text-base font-bold text-white mb-3">{s.title}</h3>
+                  <SIcon className="mb-4 text-2xl text-emerald-400" />
+                  <h3 className="mb-3 text-base font-bold text-white">{s.title}</h3>
                   <ul className="space-y-2">
                     {s.points.map((p) => (
                       <li key={p} className="flex items-start gap-2.5 text-sm text-emerald-100/70">
-                        <FaCheckCircle className="mt-0.5 shrink-0 text-emerald-400 text-xs" />
+                        <FaCheckCircle className="mt-0.5 shrink-0 text-xs text-emerald-400" />
                         {p}
                       </li>
                     ))}
@@ -394,12 +413,10 @@ export default function MedicalTreatmentPage() {
         </div>
       </section>
 
-      {/* ── TOP HOSPITALS + WHY INDIA ── */}
+      {/* ── TOP HOSPITALS ── */}
       <section className="bg-white px-4 py-20 lg:px-10">
-        <div className="mx-auto max-w-7xl grid gap-8 lg:grid-cols-2">
-
-          {/* Hospitals list */}
-          <div>
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 max-w-2xl">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#01696f]">
               Our Network
             </p>
@@ -410,81 +427,49 @@ export default function MedicalTreatmentPage() {
               We have working relationships with India's most reputed hospitals — ensuring Gulf
               patients get access to the best doctors and facilities.
             </p>
+          </div>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {topHospitals.map((hospital, i) => (
-                <div
-                  key={hospital.name}
-                  className="group overflow-hidden rounded-2xl border border-slate-200 bg-[#f7f6f2] shadow-[0_10px_26px_rgba(15,23,42,0.06)] transition hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(15,23,42,0.12)]"
-                >
-                  <div className="relative h-36">
-                    <Image
-                      src={hospital.image}
-                      alt={hospital.name}
-                      fill
-                      sizes="(max-width: 640px) 100vw, 50vw"
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#052e1c]/70 via-transparent to-transparent" />
-                    <span className="absolute left-3 top-3 rounded-full bg-white/85 px-2.5 py-1 text-[10px] font-bold text-[#052e1c] shadow-sm">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <div className="p-4">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#01696f]">
-                      {hospital.city}
-                    </p>
-                    <h3 className="mt-1 text-sm font-bold text-slate-900">
-                      {hospital.name}
-                    </h3>
-                    <div className="mt-2 flex items-start gap-2 text-xs text-slate-600">
-                      <FaMapMarkerAlt className="mt-0.5 shrink-0 text-[#01696f]" />
-                      <span>{hospital.address}</span>
-                    </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {topHospitals.map((hospital, i) => (
+              <div
+                key={hospital.name}
+                className="group overflow-hidden rounded-2xl border border-slate-200 bg-[#f7f6f2] shadow-[0_10px_26px_rgba(15,23,42,0.06)] transition hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(15,23,42,0.12)]"
+              >
+                <div className="relative h-36">
+                  <Image
+                    src={hospital.image}
+                    alt={hospital.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#052e1c]/70 via-transparent to-transparent" />
+                  <span className="absolute left-3 top-3 flex h-6 w-6 items-center justify-center rounded-full bg-white/90 text-[10px] font-extrabold text-[#052e1c] shadow-sm">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <div className="p-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#01696f]">
+                    {hospital.city}
+                  </p>
+                  <h3 className="mt-1 text-sm font-bold leading-snug text-slate-900">
+                    {hospital.name}
+                  </h3>
+                  <div className="mt-2.5 flex items-start gap-2 text-xs leading-relaxed text-slate-500">
+                    <FaMapMarkerAlt className="mt-0.5 shrink-0 text-[#01696f]" />
+                    <span>{hospital.address}</span>
                   </div>
                 </div>
-              ))}
-            </div>
-
-            <Link
-              href="/contact"
-              className="mt-8 inline-flex min-h-[50px] items-center gap-2 rounded-xl bg-[#052e1c] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#0d5b45] hover:-translate-y-0.5"
-            >
-              Book Hospital Appointment <FaArrowRight className="text-xs" />
-            </Link>
-          </div>
-
-          {/* Why India card — image + content */}
-          <div className="overflow-hidden rounded-[28px] shadow-[0_20px_50px_rgba(13,91,69,0.16)]">
-            <div className="relative h-52 overflow-hidden">
-              <Image
-                src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/0b31509108921245bb6ce16bbcc370de344d2558.jpg"
-                alt="Indian doctor consulting patient"
-                fill
-                className="object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0d5b45]/20 to-[#0d5b45]/90" />
-              <div className="absolute bottom-5 left-7">
-                <span className="rounded-full border border-white/20 bg-white/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald-100 backdrop-blur-sm">
-                  Why Choose India?
-                </span>
               </div>
-            </div>
-
-            <div className="bg-[#0d5b45] p-8 text-white">
-              <FaHeartbeat className="text-3xl text-emerald-300 mb-5" />
-              <h3 className="text-xl font-bold mb-4">Affordable. Expert. Trusted.</h3>
-              <ul className="space-y-3">
-                {whyIndia.map((point) => (
-                  <li key={point} className="flex items-start gap-3 text-sm text-emerald-100/90 leading-7">
-                    <FaCheckCircle className="mt-0.5 shrink-0 text-emerald-300" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            ))}
           </div>
+
+          <Link
+            href="/contact"
+            className="mt-8 inline-flex min-h-[50px] items-center gap-2 rounded-xl bg-[#052e1c] px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#0d5b45]"
+          >
+            Book Hospital Appointment <FaArrowRight className="text-xs" />
+          </Link>
         </div>
       </section>
 
@@ -507,43 +492,96 @@ export default function MedicalTreatmentPage() {
             {topDoctors.map((doctor) => (
               <div
                 key={doctor.name}
-                className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_14px_30px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(15,23,42,0.14)]"
+                className="group flex flex-col rounded-3xl border border-slate-200 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.07)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_44px_rgba(15,23,42,0.13)]"
               >
-                <div className="relative h-52">
-                  <Image
-                    src={doctor.image}
-                    alt={doctor.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover"
+                {/* ── Profile top section ── */}
+                <div className="relative flex flex-col items-center px-6 pb-5 pt-8">
+                  <div
+                    className="absolute left-0 right-0 top-0 h-24 rounded-t-3xl"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, color-mix(in srgb, var(--primary) 10%, white), color-mix(in srgb, var(--primary-light) 8%, white))",
+                    }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent" />
-                  <span className="absolute bottom-4 left-4 rounded-full bg-white/90 px-3 py-1 text-[10px] font-semibold text-[#052e1c]">
+
+                  <div className="relative z-10 mb-4">
+                    <div
+                      className="flex h-24 w-24 items-center justify-center rounded-full p-[3px] shadow-[0_8px_24px_rgba(1,105,111,0.25)]"
+                      style={{
+                        background: "linear-gradient(135deg, var(--primary), var(--primary-light))",
+                      }}
+                    >
+                      <div className="flex h-full w-full items-center justify-center rounded-full bg-white p-[2px]">
+                        <div className="relative h-full w-full overflow-hidden rounded-full">
+                          <Image
+                            src={doctor.image}
+                            alt={doctor.name}
+                            fill
+                            sizes="96px"
+                            className="object-cover object-top"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      className="absolute -bottom-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full border-2 border-white shadow-sm"
+                      style={{ background: "var(--primary)" }}
+                    >
+                      <FaCheckCircle className="text-[10px] text-white" />
+                    </span>
+                  </div>
+
+                  <h3 className="z-10 text-center text-base font-bold text-slate-900">
+                    {doctor.name}
+                  </h3>
+                  <p className="z-10 mt-1 text-center text-[11px] leading-relaxed text-slate-400">
+                    {doctor.credentials}
+                  </p>
+
+                  <span
+                    className="z-10 mt-3 rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-wider"
+                    style={{
+                      background: "color-mix(in srgb, var(--primary) 10%, white)",
+                      color: "var(--primary-dark)",
+                    }}
+                  >
                     {doctor.specialization}
                   </span>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-base font-bold text-slate-900">{doctor.name}</h3>
-                  <p className="mt-1 text-xs text-slate-500">{doctor.credentials}</p>
-                  <div className="mt-4 space-y-2 text-sm text-slate-600">
-                    <div className="flex items-start gap-2">
-                      <FaHospital className="mt-0.5 shrink-0 text-[#01696f]" />
-                      <span>{doctor.hospital}</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <FaMapMarkerAlt className="mt-0.5 shrink-0 text-[#01696f]" />
-                      <span>{doctor.location}</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <FaCheckCircle className="mt-0.5 shrink-0 text-emerald-500" />
-                      <span>Experience: {doctor.experience}</span>
-                    </div>
+
+                <div className="mx-6 h-px bg-slate-100" />
+
+                <div className="flex flex-1 flex-col gap-2.5 px-6 py-5">
+                  <div className="flex items-start gap-2.5">
+                    <FaHospital
+                      className="mt-0.5 shrink-0 text-xs"
+                      style={{ color: "var(--primary)" }}
+                    />
+                    <span className="text-[12px] leading-relaxed text-slate-600">
+                      {doctor.hospital}
+                    </span>
                   </div>
+                  <div className="flex items-center gap-2.5">
+                    <FaMapMarkerAlt
+                      className="shrink-0 text-xs"
+                      style={{ color: "var(--primary)" }}
+                    />
+                    <span className="text-[12px] text-slate-500">{doctor.location}</span>
+                  </div>
+                  <div className="flex items-center gap-2.5">
+                    <FaCheckCircle className="shrink-0 text-xs text-emerald-500" />
+                    <span className="text-[12px] text-slate-500">
+                      {doctor.experience} Experience
+                    </span>
+                  </div>
+                </div>
+
+                <div className="px-6 pb-6">
                   <a
                     href={buildDoctorWhatsappLink(doctor)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 text-xs font-bold text-white transition hover:bg-[#1fb85a]"
+                    className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 text-xs font-bold text-white transition hover:bg-[#1fb85a] hover:-translate-y-0.5 active:scale-95"
                   >
                     <FaWhatsapp className="text-sm" /> WhatsApp Doctor
                   </a>
@@ -555,8 +593,8 @@ export default function MedicalTreatmentPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="px-4 py-16 bg-[#f1efe8] lg:px-10">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-[28px] bg-gradient-to-br from-[#052e1c] to-[#0d5b45] shadow-[0_20px_50px_rgba(5,46,28,0.25)] px-8 py-12 text-white sm:px-12 lg:px-14">
+      <section className="bg-[#f1efe8] px-4 py-16 lg:px-10">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-[28px] bg-gradient-to-br from-[#052e1c] to-[#0d5b45] px-8 py-12 text-white shadow-[0_20px_50px_rgba(5,46,28,0.25)] sm:px-12 lg:px-14">
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-300">
