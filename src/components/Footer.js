@@ -104,12 +104,11 @@ export default function Footer() {
 
           {/* ── BRAND ── */}
           <div>
-            <div className="mb-5 flex items-start">
-              <div className="flex flex-col items-start">
+            <div className="mb-5 flex flex-col items-start">
                 <img
                   src="/logo/triphealer-logo-black.png"
                   alt="Triphealer Logo"
-                  className="h-[60px] w-auto"
+                  className="h-[65px] -ml-2 w-auto"
                 />
                 <div
                   className="-mt-3 text-[10px] font-semibold uppercase tracking-[0.12em]"
@@ -117,7 +116,6 @@ export default function Footer() {
                 >
                   Medical Tourism & Manpower Consultant
                 </div>
-              </div>
             </div>
 
             <p className="max-w-xs text-sm leading-7 text-slate-500">

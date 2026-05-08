@@ -97,7 +97,7 @@ export default function Navbar() {
             >
             
               {/* only image logo name */}
-              <img src="/logo/triphealer-logo-black.png" alt="Triphealer Logo" className="h-[60px] w-auto" />
+              <img src="/logo/triphealer-logo-black.png" alt="Triphealer Logo" className="h-[65px] -ml-2 w-auto" />
               
             </Link>
 
@@ -169,7 +169,7 @@ export default function Navbar() {
             {/* optimize logo and slogan */}
             <div className="flex flex-col items-start">
             {/* only image logo name */}
-            <img src="/logo/triphealer-logo-black.png" alt="Triphealer Logo" className="h-[60px] w-auto" />
+            <img src="/logo/triphealer-logo-black.png" alt="Triphealer Logo" className="h-[65px] -ml-2 w-auto" />
             {/* slogan */}
             <div className="text-[10px] -mt-3 font-semibold uppercase tracking-[0.12em] text-[#01696f]">
               Medical Tourism & Manpower Consultant
