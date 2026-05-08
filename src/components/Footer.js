@@ -107,7 +107,7 @@ export default function Footer() {
             <div className="mb-5 flex items-start">
               <div className="flex flex-col items-start">
                 <img
-                  src="/logo/triphealer-logo.png"
+                  src="/logo/triphealer-logo-black.png"
                   alt="Triphealer Logo"
                   className="h-[60px] w-auto"
                 />
