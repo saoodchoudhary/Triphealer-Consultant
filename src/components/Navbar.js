@@ -88,14 +88,14 @@ export default function Navbar() {
 
         {/* ── MAIN NAV ── */}
         <nav className="bg-white border-b border-slate-100">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-4 h-[68px] lg:px-10">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-4 h-[68px] lg:px-10 xl:px-4">
 
             {/* Logo */}
             <Link
               href="/"
               className="flex items-center gap-3 transition duration-200 hover:opacity-85"
             >
-              <img src="/logo/logo-transparent.webp" alt="Triphealer Logo" className="h-12 w-auto" />
+              {/* <img src="/logo/logo-transparent.webp" alt="Triphealer Logo" className="h-12 w-auto" />
               <div className="leading-none">
                 <div className="text-[17px] font-extrabold tracking-tight text-slate-900">
                   Triphealer
@@ -103,7 +103,10 @@ export default function Navbar() {
                 <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.05] sm:tracking-[0.14em] text-[#01696f] block">
                   Medical Tourism & Manpower
                 </div>
-              </div>
+              </div> */}
+              {/* only image logo name */}
+              <img src="/logo/triphealer-logo.png" alt="Triphealer Logo" className="h-[60px] w-auto" />
+              
             </Link>
 
             {/* Desktop nav links */}
@@ -170,7 +173,7 @@ export default function Navbar() {
         {/* Sidebar header */}
         <div className="flex items-center justify-between border-b border-slate-100 bg-[#f7f6f2] px-5 py-4">
           <div className="flex items-center gap-3">
-            <img src="/logo/logo-transparent.webp" alt="Triphealer Logo" className="h-12 w-auto" />
+            {/* <img src="/logo/logo-transparent.webp" alt="Triphealer Logo" className="h-12 w-auto" />
             <div>
               <div className="text-sm font-extrabold tracking-tight text-slate-900">
                 Triphealer
@@ -178,6 +181,15 @@ export default function Navbar() {
               <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#01696f]">
                 Medical Tourism & Manpower Consultant
               </div>
+            </div> */}
+            {/* optimize logo and slogan */}
+            <div className="flex flex-col items-start">
+            {/* only image logo name */}
+            <img src="/logo/triphealer-logo.png" alt="Triphealer Logo" className="h-[60px] w-auto" />
+            {/* slogan */}
+            <div className="text-[10px] -mt-3 font-semibold uppercase tracking-[0.12em] text-[#01696f]">
+              Medical Tourism & Manpower Consultant
+            </div>
             </div>
           </div>
           <button

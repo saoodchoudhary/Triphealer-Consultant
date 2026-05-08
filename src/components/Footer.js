@@ -109,22 +109,14 @@ export default function Footer() {
           <div>
             {/* Logo lockup */}
             <div className="mb-5 flex items-center gap-3">
-              <img
-                src="/logo/triphealer-logo.webp"
-                alt="Triphealer Logo"
-                className="h-12 w-auto"
-              />
-              <div>
-                <div className="text-lg font-extrabold tracking-tight text-white leading-none">
-                  Triphealer
-                </div>
-                <div
-                  className="mt-1 text-[10px] font-semibold uppercase tracking-[0.16em]"
-                  style={{ color: "var(--primary-light)" }}
-                >
-                  Medical Tourism & Manpower Consultant
-                </div>
-              </div>
+          <div className="flex flex-col items-start">
+            {/* only image logo name */}
+            <img src="/logo/triphealer-logo.png" alt="Triphealer Logo" className="h-[60px] w-auto" />
+            {/* slogan */}
+            <div className="text-[10px] -mt-3 font-semibold uppercase tracking-[0.12em] text-[#01696f]">
+              Medical Tourism & Manpower Consultant
+            </div>
+            </div>
             </div>
 
             <p className="max-w-xs text-sm leading-7 text-white/45">

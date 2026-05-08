@@ -261,9 +261,7 @@ export default function MedicalTreatmentPage() {
             <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
               Trusted Medical Care
               <br />
-              <span className="text-emerald-300">in India for Gulf</span>
-              <br />
-              Patients.
+              <span className="text-emerald-300">in India</span>
             </h1>
 
             <p className="mt-6 max-w-xl text-base leading-8 text-slate-200 sm:text-lg">
