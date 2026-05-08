@@ -72,6 +72,8 @@ const enquiryTypes = [
   "Other",
 ];
 
+const contactPreferences = ["WhatsApp", "Phone Call", "Email"];
+
 const quickLinks = [
   { href: "/gulf-visas",              label: "Gulf Work Visa Services" },
   { href: "/recruitment-services",    label: "Overseas Recruitment" },
@@ -93,16 +95,50 @@ const inputCls =
 // ─── PAGE ───────────────────────────────────────────────────────────
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: "", email: "", phone: "", country: "", enquiry: "", message: "",
+    name: "",
+    email: "",
+    phone: "",
+    country: "",
+    enquiry: "",
+    preferredContact: "WhatsApp",
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (e) =>
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError("");
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!response.ok) {
+        let payload = null;
+        try {
+          payload = await response.json();
+        } catch (parseError) {
+          throw new Error("invalid_response");
+        }
+        throw new Error(payload?.error || "request_failed");
+      }
+      setSubmitted(true);
+    } catch (error) {
+      const fallbackMessage =
+        error?.message === "invalid_response"
+          ? "Unable to process your request. Please try again or contact support."
+          : "Unable to send your message. Please try again or contact support.";
+      setSubmitError(fallbackMessage);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -202,7 +238,18 @@ export default function ContactPage() {
                   Thank you for contacting Triphealer. Our team will get back to you within 24 hours.
                 </p>
                 <button
-                  onClick={() => { setSubmitted(false); setFormData({ name:"",email:"",phone:"",country:"",enquiry:"",message:"" }); }}
+                  onClick={() => {
+                    setSubmitted(false);
+                    setFormData({
+                      name: "",
+                      email: "",
+                      phone: "",
+                      country: "",
+                      enquiry: "",
+                      preferredContact: "WhatsApp",
+                      message: "",
+                    });
+                  }}
                   className="mt-6 rounded-lg border border-emerald-300 bg-white px-5 py-2 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-50"
                 >
                   Send another message
@@ -280,6 +327,24 @@ export default function ContactPage() {
                   </select>
                 </div>
 
+                {/* Preferred contact */}
+                <div>
+                  <label className="mb-1.5 block text-sm font-semibold text-slate-700">
+                    Preferred Contact Method <span className="text-red-400">*</span>
+                  </label>
+                  <select
+                    name="preferredContact"
+                    value={formData.preferredContact}
+                    onChange={handleChange}
+                    required
+                    className={inputCls}
+                  >
+                    {contactPreferences.map((pref) => (
+                      <option key={pref} value={pref}>{pref}</option>
+                    ))}
+                  </select>
+                </div>
+
                 {/* Message */}
                 <div>
                   <label className="mb-1.5 block text-sm font-semibold text-slate-700">
@@ -296,10 +361,24 @@ export default function ContactPage() {
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded-xl bg-[#01696f] px-6 text-sm font-bold text-white shadow-[0_6px_20px_rgba(1,105,111,0.25)] transition duration-200 hover:bg-[#0c4e54] hover:-translate-y-0.5 active:scale-[0.98]"
+                  disabled={isSubmitting}
+                  aria-busy={isSubmitting}
+                  className="inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded-xl bg-[#01696f] px-6 text-sm font-bold text-white shadow-[0_6px_20px_rgba(1,105,111,0.25)] transition duration-200 hover:bg-[#0c4e54] hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70 active:scale-[0.98]"
                 >
-                  Send Message <FaArrowRight className="text-xs" />
+                  {isSubmitting ? (
+                    "Sending..."
+                  ) : (
+                    <>
+                      Send Message <FaArrowRight className="text-xs" />
+                    </>
+                  )}
                 </button>
+
+                {submitError && (
+                  <p className="rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-xs text-red-600">
+                    {submitError}
+                  </p>
+                )}
 
                 <p className="text-center text-xs text-slate-400">
                   We respond within 24 hours · Your info is kept private

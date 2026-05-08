@@ -8,6 +8,7 @@ import {
   FaFlask,
   FaHeartbeat,
   FaHospital,
+  FaMapMarkerAlt,
   FaPhone,
   FaStar,
   FaUserMd,
@@ -125,15 +126,91 @@ const supportServices = [
 ];
 
 const topHospitals = [
-  "AIIMS (All India Institute of Medical Sciences)",
-  "Apollo Hospitals",
-  "Fortis Healthcare",
-  "Max Healthcare",
-  "Medanta – The Medicity",
-  "Narayana Health",
-  "Manipal Hospitals",
-  "Kokilaben Dhirubhai Ambani Hospital",
+  {
+    name: "AIIMS (All India Institute of Medical Sciences)",
+    city: "New Delhi",
+    address: "Sri Aurobindo Marg, Ansari Nagar, New Delhi 110029",
+    image: "https://picsum.photos/seed/aiims-hospital/900/600",
+  },
+  {
+    name: "Apollo Hospitals",
+    city: "New Delhi",
+    address: "Mathura Road, Sarita Vihar, New Delhi 110076",
+    image: "https://picsum.photos/seed/apollo-hospital/900/600",
+  },
+  {
+    name: "Fortis Healthcare",
+    city: "Gurugram",
+    address: "Sector 44, Opposite HUDA City Centre, Gurugram 122002",
+    image: "https://picsum.photos/seed/fortis-hospital/900/600",
+  },
+  {
+    name: "Max Healthcare",
+    city: "New Delhi",
+    address: "1-2, Press Enclave Road, Saket, New Delhi 110017",
+    image: "https://picsum.photos/seed/max-hospital/900/600",
+  },
+  {
+    name: "Medanta – The Medicity",
+    city: "Gurugram",
+    address: "Sector 38, Gurugram, Haryana 122001",
+    image: "https://picsum.photos/seed/medanta-hospital/900/600",
+  },
+  {
+    name: "Narayana Health",
+    city: "Bengaluru",
+    address: "258/A, Bommasandra Industrial Area, Bengaluru 560099",
+    image: "https://picsum.photos/seed/narayana-hospital/900/600",
+  },
+  {
+    name: "Manipal Hospitals",
+    city: "Bengaluru",
+    address: "98, HAL Airport Road, Bengaluru 560017",
+    image: "https://picsum.photos/seed/manipal-hospital/900/600",
+  },
+  {
+    name: "Kokilaben Dhirubhai Ambani Hospital",
+    city: "Mumbai",
+    address: "Rao Saheb Achutrao Patwardhan Marg, Andheri West, Mumbai 400053",
+    image: "https://picsum.photos/seed/kokilaben-hospital/900/600",
+  },
 ];
+
+const topDoctors = [
+  {
+    name: "Dr. Sowjanya Aggarwal",
+    credentials: "MBBS, MS - Obstetrics & Gynaecology",
+    specialization: "Obstetrics & Gynaecology",
+    experience: "12 Years",
+    hospital: "Apollo Hospitals, New Delhi",
+    location: "New Delhi, India",
+    image: "https://picsum.photos/seed/sowjanya-doctor/700/800",
+  },
+  {
+    name: "Dr. Rekha Mittal",
+    credentials: "MBBS, MD - Pediatrics",
+    specialization: "Pediatrics & Neonatology",
+    experience: "15 Years",
+    hospital: "Fortis Escorts Heart Institute, New Delhi",
+    location: "New Delhi, India",
+    image: "https://picsum.photos/seed/rekha-doctor/700/800",
+  },
+  {
+    name: "Dr. Gautam Niloba Naik",
+    credentials: "MBBS, MD - General Medicine, DM - Cardiology",
+    specialization: "Interventional Cardiologist",
+    experience: "15 Years",
+    hospital: "Indraprastha Apollo Hospital, New Delhi",
+    location: "New Delhi, India",
+    image: "https://github.com/user-attachments/assets/703eebd4-4718-45b9-953c-d7f0122e06ea",
+  },
+];
+
+const whatsappNumber = "919953889465";
+const buildDoctorWhatsappLink = (doctor) =>
+  `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    `Hello Sir, I want to consult with ${doctor.name} (${doctor.credentials}).`
+  )}`;
 
 const whyIndia = [
   "World-class hospitals with latest technology",
@@ -336,16 +413,37 @@ export default function MedicalTreatmentPage() {
               patients get access to the best doctors and facilities.
             </p>
 
-            <div className="mt-8 space-y-3">
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {topHospitals.map((hospital, i) => (
                 <div
-                  key={hospital}
-                  className="flex items-center gap-4 rounded-2xl border border-slate-100 bg-[#f7f6f2] px-5 py-3.5 transition hover:border-emerald-200 hover:bg-emerald-50/40"
+                  key={hospital.name}
+                  className="group overflow-hidden rounded-2xl border border-slate-200 bg-[#f7f6f2] shadow-[0_10px_26px_rgba(15,23,42,0.06)] transition hover:-translate-y-1 hover:shadow-[0_16px_34px_rgba(15,23,42,0.12)]"
                 >
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#052e1c] text-xs font-extrabold text-white">
-                    {i + 1}
-                  </span>
-                  <span className="text-sm font-medium text-slate-700">{hospital}</span>
+                  <div className="relative h-36">
+                    <Image
+                      src={hospital.image}
+                      alt={hospital.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#052e1c]/70 via-transparent to-transparent" />
+                    <span className="absolute left-3 top-3 rounded-full bg-white/85 px-2.5 py-1 text-[10px] font-bold text-[#052e1c] shadow-sm">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <div className="p-4">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#01696f]">
+                      {hospital.city}
+                    </p>
+                    <h3 className="mt-1 text-sm font-bold text-slate-900">
+                      {hospital.name}
+                    </h3>
+                    <div className="mt-2 flex items-start gap-2 text-xs text-slate-600">
+                      <FaMapMarkerAlt className="mt-0.5 shrink-0 text-[#01696f]" />
+                      <span>{hospital.address}</span>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -388,6 +486,72 @@ export default function MedicalTreatmentPage() {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── DOCTOR PANEL ── */}
+      <section className="bg-[#f7f6f2] px-4 py-20 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#01696f]">
+              Specialist Doctors
+            </p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+              Consult Leading Medical Experts
+            </h2>
+            <p className="mt-4 text-base leading-7 text-slate-500">
+              Select a doctor and connect instantly on WhatsApp for a consultation request.
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {topDoctors.map((doctor) => (
+              <div
+                key={doctor.name}
+                className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_14px_30px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(15,23,42,0.14)]"
+              >
+                <div className="relative h-52">
+                  <Image
+                    src={doctor.image}
+                    alt={doctor.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent" />
+                  <span className="absolute bottom-4 left-4 rounded-full bg-white/90 px-3 py-1 text-[10px] font-semibold text-[#052e1c]">
+                    {doctor.specialization}
+                  </span>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-base font-bold text-slate-900">{doctor.name}</h3>
+                  <p className="mt-1 text-xs text-slate-500">{doctor.credentials}</p>
+                  <div className="mt-4 space-y-2 text-sm text-slate-600">
+                    <div className="flex items-start gap-2">
+                      <FaHospital className="mt-0.5 shrink-0 text-[#01696f]" />
+                      <span>{doctor.hospital}</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <FaMapMarkerAlt className="mt-0.5 shrink-0 text-[#01696f]" />
+                      <span>{doctor.location}</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <FaCheckCircle className="mt-0.5 shrink-0 text-emerald-500" />
+                      <span>Experience: {doctor.experience}</span>
+                    </div>
+                  </div>
+                  <a
+                    href={buildDoctorWhatsappLink(doctor)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 text-xs font-bold text-white transition hover:bg-[#1fb85a]"
+                  >
+                    <FaWhatsapp className="text-sm" /> WhatsApp Doctor
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

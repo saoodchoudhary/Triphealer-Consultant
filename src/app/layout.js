@@ -2,6 +2,7 @@ import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 
 // Display font — headings, brand name, bold labels
 const plusJakarta = Plus_Jakarta_Sans({
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col font-body">
         <Navbar />
         <main className="flex-1">{children}</main>
+        <WhatsAppFloatingButton />
         <Footer />
       </body>
     </html>

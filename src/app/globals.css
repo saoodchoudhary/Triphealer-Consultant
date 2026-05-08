@@ -74,6 +74,20 @@ button { cursor: pointer; }
   color: var(--foreground);
 }
 
+.hero-banner-track {
+  animation: hero-slide 26s linear infinite;
+  will-change: transform;
+}
+
+@keyframes hero-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 :focus-visible {
   outline: 1px solid var(--primary);
   border-radius: 4px;

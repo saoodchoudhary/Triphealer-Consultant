@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   /* config options here */
-  // add image pplx-res.cloudinary.com to allowed domains
   images: {
-    domains: ['pplx-res.cloudinary.com', 'picsum.photos'],
+    remotePatterns: [
+      { protocol: "https", hostname: "pplx-res.cloudinary.com" },
+      { protocol: "https", hostname: "picsum.photos" },
+      { protocol: "https", hostname: "github.com", pathname: "/user-attachments/assets/**" },
+    ],
   },
 };
 

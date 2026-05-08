@@ -1,0 +1,18 @@
+<svg width="1600" height="700" viewBox="0 0 1600 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="med-bg" x1="0" y1="0" x2="1600" y2="700" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#052e1c"/>
+      <stop offset="55%" stop-color="#0d5b45"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <radialGradient id="med-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(350 120) rotate(120) scale(420 380)">
+      <stop stop-color="#6ee7b7" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#6ee7b7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="700" fill="url(#med-bg)"/>
+  <circle cx="360" cy="140" r="260" fill="url(#med-glow)"/>
+  <circle cx="1320" cy="520" r="220" fill="#10b981" fill-opacity="0.2"/>
+  <path d="M0 520C220 460 420 470 640 520C860 570 1070 640 1340 620C1470 610 1560 570 1600 540V700H0V520Z" fill="#052e1c" fill-opacity="0.55"/>
+  <path d="M0 450C190 400 410 420 640 470C870 520 1070 590 1320 570C1460 560 1550 530 1600 500V700H0V450Z" fill="#04130d" fill-opacity="0.4"/>
+</svg>
