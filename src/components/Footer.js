@@ -105,17 +105,17 @@ export default function Footer() {
           {/* ── BRAND ── */}
           <div>
             <div className="mb-5 flex flex-col items-start">
-                <img
-                  src="/logo/triphealer-logo-black.png"
-                  alt="Triphealer Logo"
-                  className="h-[65px] -ml-2 w-auto"
-                />
-                <div
-                  className="-mt-3 text-[10px] font-semibold uppercase tracking-[0.12em]"
-                  style={{ color: "var(--primary)" }}
-                >
-                  Medical Tourism & Manpower Consultant
-                </div>
+              <img
+                src="/logo/triphealer-logo-black.png"
+                alt="Triphealer Logo"
+                className="h-[65px] -ml-2 w-auto"
+              />
+              <div
+                className="-mt-3 text-[10px] font-semibold uppercase tracking-[0.12em]"
+                style={{ color: "var(--primary)" }}
+              >
+                Medical Tourism & Manpower Consultant
+              </div>
             </div>
 
             <p className="max-w-xs text-sm leading-7 text-slate-500">
@@ -273,20 +273,38 @@ export default function Footer() {
 
       {/* ══ BOTTOM BAR ══════════════════════════════════════════════ */}
       <div className="border-t border-[#d1e0df] bg-white">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-xs sm:flex-row lg:px-10">
-          <p className="text-slate-400">
-            © {new Date().getFullYear()}{" "}
-            <span
-              className="font-semibold"
-              style={{ color: "var(--primary-dark)" }}
-            >
-              Triphealer
-            </span>
-            . All rights reserved.
-          </p>
-          <p className="text-[10px] uppercase tracking-[0.14em] text-slate-400">
-            Medical Tourism & Manpower Consultant · New Delhi, India
-          </p>
+        <div className="mx-auto max-w-7xl px-4 py-5 lg:px-10">
+
+          {/* Top row — copyright + location */}
+          <div className="flex flex-col items-center justify-between gap-3 text-xs sm:flex-row">
+            <p className="text-slate-400">
+              © {new Date().getFullYear()}{" "}
+              <span
+                className="font-semibold"
+                style={{ color: "var(--primary-dark)" }}
+              >
+                Triphealer
+              </span>
+              . All rights reserved.
+            </p>
+             {/* Bottom row — RBM Studios credit */}
+          <div className=" border-slate-100 text-center">
+            <p className="text-xs text-slate-400">
+              Designed &amp; Managed by{" "}
+              <a
+                href="https://www.rbmstudios.co/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-slate-500 transition duration-200 hover:text-[#01696f]"
+              >
+                RBM Studios
+              </a>
+            </p>
+          </div>
+          </div>
+
+         
+
         </div>
       </div>
 

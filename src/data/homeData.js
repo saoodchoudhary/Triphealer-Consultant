@@ -21,28 +21,28 @@ export const services = [
     title: "Gulf Work Visa Services",
     text: "Saudi Arabia, UAE, Qatar, Kuwait, Oman and Bahrain visa support with documentation and embassy process guidance.",
     href: "/gulf-visas",
-    img: "https://picsum.photos/seed/passport/600/360",
+    img: "/images/services/gulf-work-visa-services.webp",
   },
   {
     icon: FaUserTie,
     title: "Overseas Recruitment",
     text: "Skilled and unskilled manpower supply with CV shortlisting, interviews, trade tests and joining support.",
     href: "/recruitment-services",
-    img: "https://pplx-res.cloudinary.com/image/upload/pplx_search_images/e3adf2ddb992aee1b8a21f59c64a37fff319bf7f.jpg",
+    img: "/images/services/overseas-recruitment.webp",
   },
   {
     icon: FaHospital,
     title: "Medical Treatment in India",
     text: "Hospital appointments, specialist doctors, treatment planning, medical visa help and patient assistance.",
     href: "/medical-treatment-india",
-    img: "https://pplx-res.cloudinary.com/image/upload/pplx_search_images/3cdb7b3ac9650771d066611cef41340afdb30b65.jpg",
+    img: "/images/services/medical-treatment-india.webp",
   },
   {
     icon: FaPlane,
     title: "Travel Support",
     text: "Flight booking, airport pickup, hotel stay, interpreter help and smooth travel coordination.",
     href: "/travel-support",
-    img: "https://pplx-res.cloudinary.com/image/upload/pplx_search_images/920d345b13f96c7ecf8d837141bba33ab5c6c3f6.jpg",
+    img: "/images/services/travel-support.webp",
   },
 ];
 

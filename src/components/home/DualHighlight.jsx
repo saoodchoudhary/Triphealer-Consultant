@@ -60,7 +60,7 @@ export default function DualHighlight() {
           <div className="group overflow-hidden rounded-[28px] shadow-[0_20px_50px_rgba(13,91,69,0.16)]">
             <div className="relative h-52 overflow-hidden">
               <Image
-                src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/0b31509108921245bb6ce16bbcc370de344d2558.jpg"
+                src="/images/services/medical-treatment-india.webp"
                 alt="Indian doctor consulting patient"
                 fill
                 className="object-cover transition duration-500 group-hover:scale-105"
