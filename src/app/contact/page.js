@@ -125,13 +125,17 @@ export default function ContactPage() {
         try {
           payload = await response.json();
         } catch (parseError) {
-          throw new Error("Server returned an invalid response.");
+          throw new Error("invalid_response");
         }
-        throw new Error(payload?.error || "Unable to send your message.");
+        throw new Error(payload?.error || "request_failed");
       }
       setSubmitted(true);
     } catch (error) {
-      setSubmitError(error.message || "Unable to send your message.");
+      const fallbackMessage =
+        error?.message === "invalid_response"
+          ? "Unable to process your request. Please try again or contact support."
+          : "Unable to send your message. Please try again or contact support.";
+      setSubmitError(fallbackMessage);
     } finally {
       setIsSubmitting(false);
     }

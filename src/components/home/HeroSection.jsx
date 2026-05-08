@@ -22,10 +22,11 @@ export default function HeroSection() {
       className="relative overflow-hidden bg-[#04111a]"
       aria-label="Triphealer hero banners"
       aria-roledescription="carousel"
+      role="region"
     >
       <h1 className="sr-only">Triphealer Services</h1>
       <div className="relative h-[260px] sm:h-[360px] lg:h-[480px]">
-        <div className="hero-banner-track absolute inset-0 flex w-[200%]" role="list">
+        <div className="hero-banner-track absolute inset-0 flex w-[200%]">
           {[...heroBanners, ...heroBanners].map((banner, index) => {
             const isDuplicate = index >= heroBanners.length;
             const slideIndex = (index % heroBanners.length) + 1;
@@ -36,7 +37,7 @@ export default function HeroSection() {
                 aria-hidden={isDuplicate}
                 aria-label={`Slide ${slideIndex} of ${heroBanners.length}: ${banner.title}`}
                 aria-roledescription="slide"
-                role={isDuplicate ? "presentation" : undefined}
+                role={isDuplicate ? "presentation" : "group"}
               >
                 <Image
                   src={banner.image}

@@ -27,11 +27,11 @@ export async function POST(request) {
       { status: 200 }
     );
   } catch (error) {
-    if (process.env.NODE_ENV !== "production") {
-      console.error("Contact API error:", error);
-    } else {
-      console.error("Contact API error:", error?.message || "Unknown error");
-    }
+    const logPayload =
+      process.env.NODE_ENV !== "production"
+        ? error
+        : error?.message || "Unknown error";
+    console.error("Contact API error:", logPayload);
     return Response.json({ error: "Invalid request payload." }, { status: 400 });
   }
 }
