@@ -190,7 +190,7 @@ export default function HeroSection() {
       <h1 className="sr-only">Triphealer Services</h1>
 
       {/* ── Slide Area ── */}
-      <div className="relative h-[320px] min-h-[500px] sm:h-[420px] lg:h-[560px]">
+      <div className="relative h-[320px] min-h-[460px] sm:h-[420px] lg:h-[560px]">
 
         {/* ── Background Images — crossfade ── */}
         {heroBanners.map((b, i) => (
