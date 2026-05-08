@@ -121,7 +121,12 @@ export default function ContactPage() {
         body: JSON.stringify(formData),
       });
       if (!response.ok) {
-        const payload = await response.json().catch(() => null);
+        let payload = null;
+        try {
+          payload = await response.json();
+        } catch (parseError) {
+          throw new Error("Server returned an invalid response.");
+        }
         throw new Error(payload?.error || "Unable to send your message.");
       }
       setSubmitted(true);

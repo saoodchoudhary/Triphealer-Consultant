@@ -21,16 +21,21 @@ export default function HeroSection() {
     <section
       className="relative overflow-hidden bg-[#04111a]"
       aria-label="Triphealer hero banners"
+      aria-roledescription="carousel"
     >
+      <h1 className="sr-only">Triphealer Services</h1>
       <div className="relative h-[260px] sm:h-[360px] lg:h-[480px]">
-        <div className="hero-banner-track absolute inset-0 flex w-[200%]" aria-live="polite">
+        <div className="hero-banner-track absolute inset-0 flex w-[200%]" role="list">
           {[...heroBanners, ...heroBanners].map((banner, index) => {
             const isDuplicate = index >= heroBanners.length;
+            const slideIndex = (index % heroBanners.length) + 1;
             return (
               <div
                 key={`${banner.title}-${index}`}
                 className="relative h-full w-1/2"
                 aria-hidden={isDuplicate}
+                aria-label={`Slide ${slideIndex} of ${heroBanners.length}: ${banner.title}`}
+                aria-roledescription="slide"
                 role={isDuplicate ? "presentation" : undefined}
               >
                 <Image
@@ -47,9 +52,9 @@ export default function HeroSection() {
                     <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-sky-200/80">
                       Triphealer Consultant
                     </p>
-                    <h1 className="mt-2 text-2xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
+                    <h2 className="mt-2 text-2xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
                       {banner.title}
-                    </h1>
+                    </h2>
                     <p className="mt-3 text-sm text-slate-200/90 sm:text-base">
                       {banner.subtitle}
                     </p>
