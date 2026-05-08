@@ -1,0 +1,18 @@
+<svg width="1600" height="700" viewBox="0 0 1600 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="visa-bg" x1="0" y1="0" x2="1600" y2="700" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0b3a4a"/>
+      <stop offset="55%" stop-color="#065f73"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <radialGradient id="visa-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 140) rotate(120) scale(420 380)">
+      <stop stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="700" fill="url(#visa-bg)"/>
+  <circle cx="1180" cy="140" r="280" fill="url(#visa-glow)"/>
+  <circle cx="260" cy="560" r="220" fill="#0ea5e9" fill-opacity="0.18"/>
+  <path d="M0 540C210 470 390 500 560 560C730 620 890 700 1160 680C1360 666 1500 610 1600 560V700H0V540Z" fill="#0b2130" fill-opacity="0.65"/>
+  <path d="M0 470C220 420 420 440 610 500C800 560 980 630 1260 610C1420 600 1530 560 1600 520V700H0V470Z" fill="#04111a" fill-opacity="0.45"/>
+</svg>
