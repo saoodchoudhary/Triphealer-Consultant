@@ -18,9 +18,12 @@ const heroBanners = [
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-[#04111a]">
+    <section
+      className="relative overflow-hidden bg-[#04111a]"
+      aria-label="Triphealer hero banners"
+    >
       <div className="relative h-[260px] sm:h-[360px] lg:h-[480px]">
-        <div className="hero-banner-track absolute inset-0 flex w-[200%]">
+        <div className="hero-banner-track absolute inset-0 flex w-[200%]" aria-live="off">
           {[...heroBanners, ...heroBanners].map((banner, index) => {
             const isDuplicate = index >= heroBanners.length;
             return (
@@ -28,6 +31,7 @@ export default function HeroSection() {
                 key={`${banner.title}-${index}`}
                 className="relative h-full w-1/2"
                 aria-hidden={isDuplicate}
+                role={isDuplicate ? "presentation" : undefined}
               >
                 <Image
                   src={banner.image}

@@ -353,9 +353,16 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
+                  aria-busy={isSubmitting}
                   className="inline-flex w-full min-h-[52px] items-center justify-center gap-2 rounded-xl bg-[#01696f] px-6 text-sm font-bold text-white shadow-[0_6px_20px_rgba(1,105,111,0.25)] transition duration-200 hover:bg-[#0c4e54] hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70 active:scale-[0.98]"
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"} <FaArrowRight className="text-xs" />
+                  {isSubmitting ? (
+                    "Sending..."
+                  ) : (
+                    <>
+                      Send Message <FaArrowRight className="text-xs" />
+                    </>
+                  )}
                 </button>
 
                 {submitError && (
