@@ -27,7 +27,7 @@ export async function POST(request) {
       { status: 200 }
     );
   } catch (error) {
-    console.error("Contact API error:", error);
+    console.error("Contact API error:", error?.message || "Unknown error");
     return Response.json({ error: "Invalid request payload." }, { status: 400 });
   }
 }

@@ -23,7 +23,7 @@ export default function HeroSection() {
       aria-label="Triphealer hero banners"
     >
       <div className="relative h-[260px] sm:h-[360px] lg:h-[480px]">
-        <div className="hero-banner-track absolute inset-0 flex w-[200%]" aria-live="off">
+        <div className="hero-banner-track absolute inset-0 flex w-[200%]" aria-live="polite">
           {[...heroBanners, ...heroBanners].map((banner, index) => {
             const isDuplicate = index >= heroBanners.length;
             return (
