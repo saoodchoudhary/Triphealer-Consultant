@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  FaEnvelope, FaFacebook, FaLinkedin,
+  FaEnvelope, FaFacebook, FaLinkedin, FaInstagram,
   FaMapMarkerAlt, FaPhone, FaWhatsapp,
 } from "react-icons/fa";
 
@@ -44,9 +44,9 @@ const socials = [
   },
   {
     href: "#",
-    Icon: FaLinkedin,
-    bg: "#0A66C2",
-    label: "LinkedIn",
+    Icon: FaInstagram,
+    bg: "#E1306C",
+    label: "Instagram",
     external: false,
   },
 ];
@@ -236,7 +236,7 @@ export default function Footer() {
               {/* Lucknow */}
               <div>
                 <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400">
-                  Branch — Lucknow
+                  Branch — Lucknow & Nepal
                 </p>
                 <div className="flex items-start gap-2.5 text-sm leading-7 text-slate-500">
                   <FaMapMarkerAlt
@@ -244,6 +244,13 @@ export default function Footer() {
                     style={{ color: "var(--primary)" }}
                   />
                   <span>Lucknow, Uttar Pradesh, India</span>
+                </div>
+                <div className="flex items-start gap-2.5 text-sm leading-7 text-slate-500">
+                  <FaMapMarkerAlt 
+                    className="mt-1 shrink-0"
+                    style={{ color: "var(--primary)" }}
+                  />
+                  <span>Kathmandu, Nepal</span>
                 </div>
               </div>
 

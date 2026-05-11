@@ -214,7 +214,7 @@ const topDoctors = [
   },
 ];
 
-const whatsappNumber = "919953889465";
+const whatsappNumber = "919911992755";
 const buildDoctorWhatsappLink = (doctor) =>
   `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     `Hello Sir, I want to consult with ${doctor.name} (${doctor.credentials}).`
@@ -287,7 +287,7 @@ export default function MedicalTreatmentPage() {
                 Book Consultation <FaArrowRight className="text-xs" />
               </Link>
               <a
-                href="https://wa.me/919953889465"
+                href="https://wa.me/919911992755"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[52px] items-center gap-2 rounded-xl bg-[#25D366] px-7 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#1fb85a] active:scale-95"
@@ -610,13 +610,13 @@ export default function MedicalTreatmentPage() {
             </div>
             <div className="flex flex-wrap gap-4 lg:justify-end">
               <a
-                href="tel:+919953889465"
+                href="tel:+919911992755"
                 className="inline-flex min-h-[50px] items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-[#052e1c] transition hover:bg-emerald-50"
               >
-                <FaPhone /> +91 9953889465
+                <FaPhone /> +91 9911992755
               </a>
               <a
-                href="https://wa.me/919953889465"
+                href="https://wa.me/919911992755"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[50px] items-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1fb85a]"

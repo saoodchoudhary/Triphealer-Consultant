@@ -8,7 +8,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 
 const heroBanners = [
   {
-    title: "Gulf Visa Services",
+    title: "Manpower Consultant",
     subtitle:
       "Fast, reliable documentation and manpower support for Gulf employers and skilled workers.",
     image: "/banners/visa-services-banner.webp",
@@ -130,12 +130,20 @@ function FeatureCard({ icon, title, sub, delay, visible }) {
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
   const [cardsVisible, setCardsVisible] = useState(true);
+
+  // FIX: interval ki jagah stable timeout chain (no overlap)
   const timerRef = useRef(null);
   const dotRef = useRef([]);
 
+  // keep latest state in refs to avoid stale closures
+  const currentRef = useRef(0);
+  useEffect(() => {
+    currentRef.current = current;
+  }, [current]);
+
   const stopTimer = useCallback(() => {
     if (timerRef.current) {
-      clearInterval(timerRef.current);
+      clearTimeout(timerRef.current);
       timerRef.current = null;
     }
   }, []);
@@ -148,17 +156,23 @@ export default function HeroSection() {
     }, 150);
   }, []);
 
-  const startTimer = useCallback(() => {
+  const scheduleNext = useCallback(() => {
     stopTimer();
-    timerRef.current = setInterval(() => {
-      setCurrent((prev) => {
-        const next = (prev + 1) % SLIDE_COUNT;
-        setCardsVisible(false);
-        setTimeout(() => setCardsVisible(true), 150);
-        return next;
-      });
+    timerRef.current = setTimeout(() => {
+      // animate cards out/in + move slide
+      setCardsVisible(false);
+      setTimeout(() => setCardsVisible(true), 150);
+
+      setCurrent((prev) => (prev + 1) % SLIDE_COUNT);
+
+      // schedule again (chain)
+      scheduleNext();
     }, SLIDE_DURATION);
   }, [stopTimer]);
+
+  const startTimer = useCallback(() => {
+    scheduleNext();
+  }, [scheduleNext]);
 
   useEffect(() => {
     setCardsVisible(true);
@@ -168,10 +182,20 @@ export default function HeroSection() {
 
   const handleKeyDown = useCallback(
     (e) => {
-      if (e.key === "ArrowRight") { stopTimer(); goTo((current + 1) % SLIDE_COUNT); startTimer(); }
-      if (e.key === "ArrowLeft")  { stopTimer(); goTo((current - 1 + SLIDE_COUNT) % SLIDE_COUNT); startTimer(); }
+      if (e.key === "ArrowRight") {
+        stopTimer();
+        const next = (currentRef.current + 1) % SLIDE_COUNT;
+        goTo(next);
+        startTimer();
+      }
+      if (e.key === "ArrowLeft") {
+        stopTimer();
+        const next = (currentRef.current - 1 + SLIDE_COUNT) % SLIDE_COUNT;
+        goTo(next);
+        startTimer();
+      }
     },
-    [current, goTo, stopTimer, startTimer]
+    [goTo, stopTimer, startTimer]
   );
 
   const banner = heroBanners[current];
@@ -183,15 +207,12 @@ export default function HeroSection() {
       aria-roledescription="carousel"
       role="region"
       tabIndex={0}
-      onMouseEnter={stopTimer}
-      onMouseLeave={startTimer}
       onKeyDown={handleKeyDown}
     >
       <h1 className="sr-only">Triphealer Services</h1>
 
       {/* ── Slide Area ── */}
       <div className="relative h-[320px] min-h-[480px] sm:h-[420px] lg:h-[560px]">
-
         {/* ── Background Images — crossfade ── */}
         {heroBanners.map((b, i) => (
           <div
@@ -230,7 +251,6 @@ export default function HeroSection() {
         ══════════════════════════════════════════════════════ */}
         <div className="absolute inset-0 z-10 flex flex-col">
           <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 lg:px-10">
-
             {/* ── Top row: Counter ── */}
             <div className="flex items-start justify-end pt-5 sm:pt-6">
               <div
@@ -248,7 +268,6 @@ export default function HeroSection() {
 
             {/* ── Bottom row: Content left + Cards right ── */}
             <div className="flex items-end justify-between gap-6 pb-10 sm:pb-12 lg:pb-14">
-
               {/* Left — Main content */}
               <div
                 className="min-w-0 flex-1"
@@ -330,7 +349,6 @@ export default function HeroSection() {
                   />
                 ))}
               </div>
-
             </div>
           </div>
         </div>
@@ -342,11 +360,7 @@ export default function HeroSection() {
       {/* ── Progress Dots — same max-w-7xl alignment ── */}
       <div className="relative z-20 bg-[#04111a]">
         <div className="mx-auto flex max-w-7xl justify-end px-4 py-3 lg:px-10">
-          <div
-            role="tablist"
-            aria-label="Slide navigation"
-            className="flex items-center gap-2"
-          >
+          <div role="tablist" aria-label="Slide navigation" className="flex items-center gap-2">
             {heroBanners.map((b, i) => (
               <button
                 key={b.title}
@@ -354,7 +368,11 @@ export default function HeroSection() {
                 role="tab"
                 aria-selected={i === current}
                 aria-label={`Go to slide ${i + 1}: ${b.title}`}
-                onClick={() => { stopTimer(); goTo(i); startTimer(); }}
+                onClick={() => {
+                  stopTimer();
+                  goTo(i);
+                  startTimer();
+                }}
                 className="relative h-[3px] overflow-hidden rounded-full bg-white/15 transition-all duration-300"
                 style={{ width: i === current ? 40 : 18 }}
               >
